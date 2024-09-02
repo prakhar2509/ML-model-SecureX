@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 app = FastAPI()
 
 # Load the model once when the API starts
-model = load_model('kirtan_model_last.h5')
+model = load_model('my_model.h5')
 
 # Define the input data structure using Pydantic
 class InputData(BaseModel):
