@@ -7,13 +7,14 @@ from tensorflow.keras.models import load_model
 app = FastAPI()
 
 # Load the model once when the API starts
-model = load_model('my_model.h5')
+model = load_model('kirtan_model_last.h5')
 
 # Define the input data structure using Pydantic
 class InputData(BaseModel):
     features: list  # A list of lists, each representing a set of features for prediction
 
 # Define the prediction route
+
 @app.post("/predict")
 async def predict(input_data: InputData):
     # Convert input data to numpy array
