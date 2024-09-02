@@ -15,6 +15,10 @@ class InputData(BaseModel):
 
 # Define the prediction route
 
+@app.get('/')
+def show():
+    print('Hello World')
+
 @app.post("/predict")
 async def predict(input_data: InputData):
     # Convert input data to numpy array
